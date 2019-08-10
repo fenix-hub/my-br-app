@@ -25,7 +25,7 @@ In ogni caso, le funzionalità che la versione **Free** offre sono tutte le funzi
 
 ### Accesso
 Una semplicissima schermata di accesso permette allo staff del proprio locale di poter accedere con dei propri dati identificativi (nome utente e password) assegnati dal direttore del locale, dal padrone o da chi è stato stabilito come *Amministratore* del gestionale.
-![Accesso](/SCREENSHOTS/accesso.PNG)
+![Accesso](/SCREENSHOTS/accesso.png)
 
 
 ### Interfaccia Generale
@@ -46,7 +46,7 @@ Nella sezione della *Gestione Prenotazioni* è possibile registrare una prenotazi
 E' sempre possibile visionare l'elenco completo delle prenotazioni, modificare una prenotazione e cancellare una prenotazione.  
 > La versione **PRO** implementa il sistema automatizzato di registrazione di un cliente: ogni volta che viene registrata una prenotazione, il software verifica nel proprio database che questo clienta esista. Se esiste ne viene registrata una nuova prenotazione, altrimenti il cliente entra automaticamente nell'elenco dei clienti del locale.  
 
-![Prenotazioni](/SCREENSHOTS/prenotazioni.PNG)
+![Prenotazioni](/SCREENSHOTS/prenotazioni.png)
 
 ### Gestione Clienti [PRO] (Elenco, Registra, Prenota, Gestisci)
 > Questa sezione è esclusiva alla versione PRO
@@ -55,4 +55,4 @@ Nella sezione della *Gestione Clienti* è possibile registrare un nuovo cliente c
 Attraverso il bottone *elenco* è possibile visualizzare l'elenco completo di tutti i clienti per cui è stata registrata una prenotazione. Da qui è possibile effettuarne una nuova prenotazione con i campi già compilati. Automaticamente, il sistema incrementerà il numero di prenotazioni effettuate, e terrà sempre collegato il cliente con ogni singola prenotazione registrata.  
 Con il bottone *gestione* è possibile modificare o eliminare uno o più clienti nel proprio elenco.  
 Con il bottone *registra* è possibile registrare un nuovo cliente.  
-![Clienti](/SCREENSHOTS/clienti.PNG)
+![Clienti](/SCREENSHOTS/clienti.png)
