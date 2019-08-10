@@ -13,12 +13,13 @@ Inoltre la possibilità di utilizzare shaders , animare ogni singolo componente ,
 ## Versione Free - Versione PRO
 
 Questa repository consta attualmente di due brach principali: [il codice sorgente della versione free](https://github.com/fenix-hub/my-br-app/tree/source-code), e gli eseguibili di tale versione ( disponibili per il download a qualsiasi attività commerciale o utente privato che desidera provarlo ).  
-- [Branch Versione Windows](https://github.com/fenix-hub/my-br-app/tree/windows-exe)  
-- [Branch Versione Linux](https://github.com/fenix-hub/my-br-app/tree/linux)  
-- [Branch Versione Mac](https://github.com/fenix-hub/my-br-app/tree/mac-app)  
-- [Branch Versione Android](https://github.com/fenix-hub/my-br-app/tree/android-apk)  
-- [Branch Versione iOS](https://github.com/fenix-hub/my-br-app/tree/ios)  
 In ogni caso, questa repository contiene solo alcune delle funzionalità che il software offre e che possono essere modificate direttamente da sorgente.  
 Le funzionalità aggiuntive, oscurate nel codice sorgente (se non addirittura completamente assenti) sono relative alla versione **PRO**, in via di sviluppo del tutto privata.  
 E' possibile ottenere questa versione solamente a pagamento, ed è la versione che attualmente molti ristoranti utilizzano e per cui ricevono personalizzazioni ed assistenza.
 In ogni caso, le funzionalità che la versione **Free** offre sono tutte le funzionalità principali per la corretta gestione del proprio locale.  
+- [Branch Codice Sorgente](https://github.com/fenix-hub/my-br-app/source-code)  
+- [Branch Versione Windows](https://github.com/fenix-hub/my-br-app/tree/windows-exe)  
+- [Branch Versione Linux](https://github.com/fenix-hub/my-br-app/tree/linux)  
+- [Branch Versione Mac](https://github.com/fenix-hub/my-br-app/tree/mac-app)  
+- [Branch Versione Android](https://github.com/fenix-hub/my-br-app/tree/android-apk)  
+- [Branch Versione iOS](https://github.com/fenix-hub/my-br-app/tree/ios)
