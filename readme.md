@@ -1,4 +1,4 @@
-# My Booking Restaurant (FREE) - Windows
+# My Booking Restaurant (FREE) - Linux
 
 ### [Italiano]
 
