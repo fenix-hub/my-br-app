@@ -1,3 +1,4 @@
 .import/
 SCREENSHOTS/*.import
 .git
+export_presets.cfg
