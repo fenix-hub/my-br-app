@@ -1,0 +1,106 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Button",
+"class": "Cliente",
+"language": "GDScript",
+"path": "res://scripts/Cliente.gd"
+}, {
+"base": "HBoxContainer",
+"class": "ClienteElimina",
+"language": "GDScript",
+"path": "res://scripts/ClienteElimina.gd"
+}, {
+"base": "Button",
+"class": "Prenotazione",
+"language": "GDScript",
+"path": "res://scripts/Prenotazione.gd"
+}, {
+"base": "HBoxContainer",
+"class": "PrenotazioneElimina",
+"language": "GDScript",
+"path": "res://scripts/PrenotazioneElimina.gd"
+}, {
+"base": "HBoxContainer",
+"class": "PrenotazioneModifica",
+"language": "GDScript",
+"path": "res://scripts/PrenotazioneModifica.gd"
+} ]
+_global_script_class_icons={
+"Cliente": "",
+"ClienteElimina": "",
+"Prenotazione": "",
+"PrenotazioneElimina": "",
+"PrenotazioneModifica": ""
+}
+
+[application]
+
+config/name="GestioneSuisse"
+run/main_scene="res://scenes/SuisseGestione.tscn"
+
+[autoload]
+
+DatiProgramma="*res://scripts/DatiProgramma.gd"
+User="*res://scripts/User.gd"
+ElencoUtenti="*res://scripts/ElencoUtenti.gd"
+ElencoClienti="*res://scripts/ElencoClienti.gd"
+ElencoPrenotazioni="*res://scripts/ElencoPrenotazioni.gd"
+
+[debug]
+
+gdscript/warnings/enable=false
+gdscript/warnings/unassigned_variable=false
+gdscript/warnings/unassigned_variable_op_assign=false
+gdscript/warnings/unused_variable=false
+gdscript/warnings/unused_class_variable=false
+gdscript/warnings/unused_argument=false
+gdscript/warnings/unreachable_code=false
+gdscript/warnings/standalone_expression=false
+gdscript/warnings/void_assignment=false
+gdscript/warnings/narrowing_conversion=false
+gdscript/warnings/function_may_yield=false
+gdscript/warnings/variable_conflicts_function=false
+gdscript/warnings/function_conflicts_variable=false
+gdscript/warnings/function_conflicts_constant=false
+gdscript/warnings/incompatible_ternary=false
+gdscript/warnings/unused_signal=false
+gdscript/warnings/return_value_discarded=false
+gdscript/warnings/property_used_as_function=false
+gdscript/warnings/constant_used_as_function=false
+gdscript/warnings/function_used_as_property=false
+gdscript/warnings/integer_division=false
+gdscript/warnings/unsafe_method_access=true
+
+[display]
+
+window/size/width=1400
+window/size/height=800
+window/size/resizable=false
+window/size/borderless=true
+window/dpi/allow_hidpi=true
+
+[input]
+
+ui_accept={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777221,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777222,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+environment/default_environment="res://default_env.tres"

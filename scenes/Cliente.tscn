@@ -1,0 +1,208 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://resources/suisse_theme/new_theme.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/Cliente.gd" type="Script" id=2]
+[ext_resource path="res://resources/imgs/tab.svg" type="Texture" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.831373, 0.776471, 0.458824, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.815686, 0.603922, 0.345098, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.670588, 0.278431, 0.278431, 1 )
+draw_center = false
+border_width_bottom = 1
+border_color = Color( 0.494118, 0.243137, 0.243137, 1 )
+
+[node name="Cliente" type="Button"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -697.0
+margin_right = 696.0
+margin_bottom = 29.0
+rect_clip_content = true
+hint_tooltip = "Espandi/Comprimi questa prenotazione"
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+script = ExtResource( 2 )
+
+[node name="Cliente" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Dati" type="HBoxContainer" parent="Cliente"]
+margin_right = 1393.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="nome" type="Label" parent="Cliente/Dati"]
+margin_right = 275.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource( 1 )
+text = "Marco"
+align = 1
+
+[node name="cognome" type="Label" parent="Cliente/Dati"]
+margin_left = 279.0
+margin_right = 554.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource( 1 )
+text = "Antonio"
+align = 1
+
+[node name="telefono" type="Label" parent="Cliente/Dati"]
+margin_left = 558.0
+margin_right = 833.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource( 1 )
+text = "3929312"
+align = 1
+
+[node name="mail" type="Label" parent="Cliente/Dati"]
+margin_left = 837.0
+margin_right = 1112.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource( 1 )
+text = "n.santilio97@gmail.com"
+align = 1
+
+[node name="pren" type="Label" parent="Cliente/Dati"]
+margin_left = 1116.0
+margin_right = 1393.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource( 1 )
+text = "0"
+align = 1
+
+[node name="tab" type="Sprite" parent="Cliente/Dati"]
+position = Vector2( 15, 15 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Dati2" type="HBoxContainer" parent="Cliente"]
+editor/display_folded = true
+margin_top = 32.0
+margin_right = 1393.0
+margin_bottom = 60.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="indirizzo" type="Label" parent="Cliente/Dati2"]
+margin_right = 345.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource( 1 )
+text = "Marco"
+align = 1
+
+[node name="cap" type="Label" parent="Cliente/Dati2"]
+margin_left = 349.0
+margin_right = 694.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource( 1 )
+text = "Antonio"
+align = 1
+
+[node name="citta" type="Label" parent="Cliente/Dati2"]
+margin_left = 698.0
+margin_right = 1043.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource( 1 )
+text = "3929312"
+align = 1
+
+[node name="prov" type="Label" parent="Cliente/Dati2"]
+margin_left = 1047.0
+margin_right = 1393.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource( 1 )
+text = "n.santilio97@gmail.com"
+align = 1
+
+[node name="Dati3" type="HBoxContainer" parent="Cliente"]
+editor/display_folded = true
+margin_top = 64.0
+margin_right = 1393.0
+margin_bottom = 92.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="ragione" type="Label" parent="Cliente/Dati3"]
+margin_right = 694.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource( 1 )
+text = "Marco"
+align = 1
+
+[node name="piva" type="Label" parent="Cliente/Dati3"]
+margin_left = 698.0
+margin_right = 1393.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource( 1 )
+text = "Antonio"
+align = 1
+
+[node name="allergie" type="Label" parent="Cliente"]
+margin_top = 96.0
+margin_right = 1393.0
+margin_bottom = 124.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 0.392157 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 0.392157 )
+text = "Marco"
+align = 1
+
+[node name="note" type="Label" parent="Cliente"]
+margin_top = 128.0
+margin_right = 1393.0
+margin_bottom = 156.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 0.392157 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 0.392157 )
+text = "Antonio"
+align = 1
+[connection signal="pressed" from="." to="." method="_on_Prenotazione_pressed"]

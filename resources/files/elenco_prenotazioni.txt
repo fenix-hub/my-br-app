@@ -1,0 +1,2 @@
+{"CODICE":0,"tavolo":0,"nome":"Mario","cognome":"Rossi","persone":4,"telefono":"--","mail":"--","giorno":10,"mese":8,"anno":2019,"ora":21,"minuti":15,"note":"nessuna nota"}
+{"CODICE":33,"tavolo":0,"nome":"Luca","cognome":"Freschi","persone":2,"telefono":"--","mail":"--","giorno":10,"mese":8,"anno":2019,"ora":20,"minuti":15,"note":"allergia alle noci"}

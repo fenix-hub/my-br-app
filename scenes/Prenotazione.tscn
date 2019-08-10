@@ -1,0 +1,120 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://resources/suisse_theme/new_theme.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/Prenotazione.gd" type="Script" id=2]
+[ext_resource path="res://resources/imgs/tab.svg" type="Texture" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.831373, 0.776471, 0.458824, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.815686, 0.603922, 0.345098, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.670588, 0.278431, 0.278431, 1 )
+draw_center = false
+border_width_bottom = 1
+border_color = Color( 0.494118, 0.243137, 0.243137, 1 )
+
+[node name="Prenotazione" type="Button"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -698.0
+margin_right = 698.0
+margin_bottom = 29.0
+rect_clip_content = true
+hint_tooltip = "Espandi/Comprimi questa prenotazione"
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+script = ExtResource( 2 )
+
+[node name="Prenotazione" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+margin_bottom = 60.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Dati" type="HBoxContainer" parent="Prenotazione"]
+margin_right = 1396.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="tavolo" type="Label" parent="Prenotazione/Dati"]
+margin_right = 276.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource( 1 )
+text = "000"
+align = 1
+
+[node name="ora" type="Label" parent="Prenotazione/Dati"]
+margin_left = 280.0
+margin_right = 556.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource( 1 )
+text = "99:99"
+align = 1
+
+[node name="cliente" type="Label" parent="Prenotazione/Dati"]
+margin_left = 560.0
+margin_right = 836.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource( 1 )
+text = "Marco Antonio"
+align = 1
+
+[node name="persone" type="Label" parent="Prenotazione/Dati"]
+margin_left = 840.0
+margin_right = 1116.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource( 1 )
+text = "100"
+align = 1
+
+[node name="data" type="Label" parent="Prenotazione/Dati"]
+margin_left = 1120.0
+margin_right = 1396.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource( 1 )
+text = "31/12/2019"
+align = 1
+
+[node name="tab" type="Sprite" parent="Prenotazione/Dati"]
+position = Vector2( 15, 15 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="note" type="Label" parent="Prenotazione"]
+margin_top = 32.0
+margin_right = 1396.0
+margin_bottom = 60.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 0.392157 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 0.392157 )
+text = "note"
+align = 1
+[connection signal="pressed" from="." to="." method="_on_Prenotazione_pressed"]
