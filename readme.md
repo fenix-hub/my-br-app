@@ -22,6 +22,9 @@ In ogni caso, le funzionalità che la versione **Free** offre sono tutte le funz
 - [Branch Versione Android](https://github.com/fenix-hub/my-br-app/tree/android-apk)  
 - [Branch Versione iOS](https://github.com/fenix-hub/my-br-app/tree/ios)
 
+## Guida
+Puoi trovare la guida completa alla versione FREE [in questa wiki](https://github.com/fenix-hub/my-br-app/wiki)
+
 ## Licenza (FREE)
 
 Puoi trovare la licenza della versione *Free* open-source direttamente nella repository, o in [questa pagina](https://github.com/fenix-hub/my-br-app/blob/source-code/LICENSE)
