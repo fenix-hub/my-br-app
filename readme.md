@@ -24,7 +24,7 @@ In ogni caso, le funzionalità che la versione **Free** offre sono tutte le funz
 - [Branch Versione Android](https://github.com/fenix-hub/my-br-app/tree/android-apk)  
 - [Branch Versione iOS](https://github.com/fenix-hub/my-br-app/tree/ios)
 
-## Funzionamento - Versione PC (Windows,Linux,Mac)
+## Funzionamento
 
 *My Booking Restaurant (Free)* permette una facile e rapida gestione delle prenotazioni registrate nel proprio locale, e dei propri clienti.  
 
