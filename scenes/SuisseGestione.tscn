@@ -1738,7 +1738,6 @@ margin_left = 215.0
 margin_top = 33.0
 
 [node name="SideMenu" type="Control" parent="."]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 36.0
@@ -1760,7 +1759,6 @@ __meta__ = {
 }
 
 [node name="Bottoni" type="VBoxContainer" parent="SideMenu"]
-editor/display_folded = true
 margin_right = 218.0
 margin_bottom = 480.0
 custom_constants/separation = 0
@@ -1789,7 +1787,6 @@ margin_right = 218.0
 margin_bottom = 164.0
 theme = ExtResource( 3 )
 custom_constants/hseparation = 5
-disabled = true
 toggle_mode = true
 text = "Tavoli"
 icon = ExtResource( 21 )

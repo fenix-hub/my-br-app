@@ -5,7 +5,7 @@ var elenco : Array = []
 var codici : Array = []
 #forma della prenotazione
 # {'tavolo':null,'orario':null,'cliente':null,'persone':null,'data':null,'note':null}
-var save_file = "user://resources/files/elenco_prenotazioni.txt"
+var save_file = "user://elenco_prenotazioni.txt"
 
 signal nuova_prenotazione(p)
 signal rimuovi_prenotazione(p)
