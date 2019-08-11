@@ -28,36 +28,4 @@ In ogni caso, le funzionalità che la versione **Free** offre sono tutte le funz
 
 *My Booking Restaurant (Free)* permette una facile e rapida gestione delle prenotazioni registrate nel proprio locale, e dei propri clienti.  
 
-### Accesso
-Una semplicissima schermata di accesso permette allo staff del proprio locale di poter accedere con dei propri dati identificativi (nome utente e password) assegnati dal direttore del locale, dal padrone o da chi è stato stabilito come *Amministratore* del gestionale.
-![Accesso](/SCREENSHOTS/accesso.png)
-
-
-### Interfaccia Generale
-In alto a sinistra avremo il nome dell'applicazione (*MyBookingRestaurant*) accompagnato dal nome del ristorante, il codice della sua versione (codice numerico + letter che identifica il tipo, **"F"** free - **"PRO"** pro).  
-In alto a destra il bottone per minimizzare la finestra (-) e chiudere l'applicazione (x).  
-Sulla sinistra sarà sempre disponibile un *Menù Rapido* fisso che permetterà di interagire con le varie parti del Software.
-La versione **Free** presenterà le voci accessibili: Prenotazioni, Tavoli, Staff, Pannello.  
-Le restanti, tutte oscurate, saranno invece disponibili per la versione **PRO**, ovvero: Clienti, Materiali, Statistiche,(altre).
-
-### Pannello
-Una volta effettuato l'accesso, un *Pannello* darà le informazioni principali relative all'utente connesso (nome e ruolo nello staff), e al ristorante (nome, telefono, via...) così che queste siano sempre disponibili a chiunque per qualsiasi evenienza.  
-Non è possibile modificare queste informazioni:
-solo un Amministratore può modificare i dati relativi ad un utente e al proprio ristorante.  
-![Pannello](/SCREENSHOTS/pannello.png)
-
-### Gestione Prenotazioni (Elenco, Registra, Elimina, Modifica)
-Nella sezione della *Gestione Prenotazioni* è possibile registrare una prenotazione compilando i campi (suddivisi in obbligatori ed aggiuntivi).   
-E' sempre possibile visionare l'elenco completo delle prenotazioni, modificare una prenotazione e cancellare una prenotazione.  
-> La versione **PRO** implementa il sistema automatizzato di registrazione di un cliente: ogni volta che viene registrata una prenotazione, il software verifica nel proprio database che questo clienta esista. Se esiste ne viene registrata una nuova prenotazione, altrimenti il cliente entra automaticamente nell'elenco dei clienti del locale.  
-
-![Prenotazioni](/SCREENSHOTS/prenotazioni.png)
-
-### Gestione Clienti [PRO] (Elenco, Registra, Prenota, Gestisci)
-> Questa sezione è esclusiva alla versione PRO
-
-Nella sezione della *Gestione Clienti* è possibile registrare un nuovo cliente compilando i campi (suddivisi in oblbigatori ed aggiuntivi).  
-Attraverso il bottone *elenco* è possibile visualizzare l'elenco completo di tutti i clienti per cui è stata registrata una prenotazione. Da qui è possibile effettuarne una nuova prenotazione con i campi già compilati. Automaticamente, il sistema incrementerà il numero di prenotazioni effettuate, e terrà sempre collegato il cliente con ogni singola prenotazione registrata.  
-Con il bottone *gestione* è possibile modificare o eliminare uno o più clienti nel proprio elenco.  
-Con il bottone *registra* è possibile registrare un nuovo cliente.  
-![Clienti](/SCREENSHOTS/clienti.png)
+Puoi trovare la guida completa al software, con didascalie e descrizioni, nella mia [MyBookingRestaurant WIKI](https://github.com/fenix-hub/my-br-app/wiki)
