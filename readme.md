@@ -1,5 +1,5 @@
 # My Booking Restaurant (FREE)
-![sh](/screenshot/showcase.png)
+![sh](/source-code/blob/screenshot/showcase.png)
 
 ## Descrizione
 
