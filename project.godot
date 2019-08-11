@@ -46,6 +46,7 @@ _global_script_class_icons={
 
 config/name="GestioneSuisse"
 run/main_scene="res://scenes/SuisseGestione.tscn"
+config/icon="res://resources/imgs/tavoli.png"
 
 [autoload]
 

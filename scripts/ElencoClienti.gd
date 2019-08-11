@@ -5,7 +5,7 @@ var elenco : Array = []
 var codici : Array = []
 #forma cliente {'nome':null,'cognome':null,'ragione_sociale':null,'indirizzo':null,'cap':null,'citta':null,'provincia':null,'piva':null,'telefono':null,'mail':null}
 
-var save_file = "res://resources/files/elenco_clienti.txt"
+var save_file = "user://resources/files/elenco_clienti.txt"
 
 signal nuovo_cliente(c)
 signal rimuovi_cliente(c)

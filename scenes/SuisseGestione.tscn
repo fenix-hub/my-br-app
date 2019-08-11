@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://scripts/SuisseGestione.gd" type="Script" id=1]
 [ext_resource path="res://scripts/PannelloPanel.gd" type="Script" id=2]
@@ -33,10 +33,12 @@
 [ext_resource path="res://resources/imgs/stats.png" type="Texture" id=31]
 [ext_resource path="res://resources/imgs/staff.png" type="Texture" id=32]
 [ext_resource path="res://resources/imgs/info.png" type="Texture" id=33]
-[ext_resource path="res://scripts/Accesso.gd" type="Script" id=34]
-[ext_resource path="res://resources/imgs/user.svg" type="Texture" id=35]
-[ext_resource path="res://scripts/TopBar.gd" type="Script" id=36]
-[ext_resource path="res://resources/imgs/dark-fall-color-palette-elegant-flawless-2.png" type="Texture" id=37]
+[ext_resource path="res://resources/imgs/impos.png" type="Texture" id=34]
+[ext_resource path="res://scripts/Accesso.gd" type="Script" id=35]
+[ext_resource path="res://resources/imgs/user.svg" type="Texture" id=36]
+[ext_resource path="res://resources/imgs/My Booking Restaurant (2).png" type="Texture" id=37]
+[ext_resource path="res://scenes/PrimaInstallazione.tscn" type="PackedScene" id=38]
+[ext_resource path="res://scripts/TopBar.gd" type="Script" id=39]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.815686, 0.603922, 0.345098, 1 )
@@ -77,9 +79,9 @@ font_data = ExtResource( 5 )
 
 [sub_resource type="StyleBoxEmpty" id=10]
 
-[sub_resource type="StyleBoxEmpty" id=14]
+[sub_resource type="StyleBoxEmpty" id=11]
 
-[sub_resource type="StyleBoxEmpty" id=15]
+[sub_resource type="StyleBoxEmpty" id=12]
 
 [node name="SuisseGestione" type="Control"]
 anchor_right = 1.0
@@ -93,13 +95,15 @@ color = Color( 0.235294, 0.235294, 0.270588, 1 )
 
 [node name="Pannello" type="Control" parent="."]
 editor/display_folded = true
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 218.0
 margin_top = 33.0
 script = ExtResource( 2 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="BG2" type="ColorRect" parent="Pannello"]
@@ -298,13 +302,216 @@ text = "Piazza Righi, 38086 Madonna di Campiglio"
 align = 1
 editable = false
 
+[node name="Impostazioni" type="Control" parent="."]
+editor/display_folded = true
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 218.0
+margin_top = 33.0
+
+[node name="BG2" type="ColorRect" parent="Impostazioni"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.235294, 0.235294, 0.270588, 1 )
+
+[node name="BottomMenu" type="HBoxContainer" parent="Impostazioni"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -69.0
+margin_right = -1.0
+alignment = 1
+
+[node name="CambiaUtente" type="Button" parent="Impostazioni/BottomMenu"]
+margin_left = 560.0
+margin_right = 620.0
+margin_bottom = 69.0
+hint_tooltip = "Cambia Utente"
+theme = ExtResource( 3 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+icon = ExtResource( 4 )
+
+[node name="Dati" type="VBoxContainer" parent="Impostazioni"]
+editor/display_folded = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -221.0
+margin_top = -215.5
+margin_right = 222.0
+margin_bottom = -80.5
+custom_constants/separation = 10
+alignment = 1
+
+[node name="Text" type="Label" parent="Impostazioni/Dati"]
+margin_right = 443.0
+margin_bottom = 55.0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.670588, 0.278431, 0.278431, 1 )
+text = "Utente"
+align = 1
+
+[node name="Utente" type="HBoxContainer" parent="Impostazioni/Dati"]
+margin_top = 65.0
+margin_right = 443.0
+margin_bottom = 95.0
+custom_constants/separation = 15
+alignment = 1
+
+[node name="Label2" type="Label" parent="Impostazioni/Dati/Utente"]
+margin_top = 1.0
+margin_right = 214.0
+margin_bottom = 29.0
+size_flags_horizontal = 3
+theme = ExtResource( 3 )
+text = "Utente"
+align = 1
+
+[node name="Utente" type="LineEdit" parent="Impostazioni/Dati/Utente"]
+margin_left = 229.0
+margin_right = 443.0
+margin_bottom = 30.0
+size_flags_horizontal = 3
+theme = ExtResource( 3 )
+text = "null"
+align = 1
+editable = false
+
+[node name="Staff" type="HBoxContainer" parent="Impostazioni/Dati"]
+margin_top = 105.0
+margin_right = 443.0
+margin_bottom = 135.0
+custom_constants/separation = 15
+
+[node name="Label2" type="Label" parent="Impostazioni/Dati/Staff"]
+margin_top = 1.0
+margin_right = 214.0
+margin_bottom = 29.0
+size_flags_horizontal = 3
+theme = ExtResource( 3 )
+text = "Staff"
+align = 1
+
+[node name="Utente" type="LineEdit" parent="Impostazioni/Dati/Staff"]
+margin_left = 229.0
+margin_right = 443.0
+margin_bottom = 30.0
+size_flags_horizontal = 3
+theme = ExtResource( 3 )
+text = "null"
+align = 1
+editable = false
+
+[node name="Ristorante" type="VBoxContainer" parent="Impostazioni"]
+editor/display_folded = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -463.0
+margin_top = -25.5
+margin_right = 463.0
+margin_bottom = 149.5
+custom_constants/separation = 10
+alignment = 1
+
+[node name="Text" type="Label" parent="Impostazioni/Ristorante"]
+margin_right = 926.0
+margin_bottom = 55.0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.670588, 0.278431, 0.278431, 1 )
+text = "Ristorante"
+align = 1
+
+[node name="Staff2" type="HBoxContainer" parent="Impostazioni/Ristorante"]
+margin_top = 65.0
+margin_right = 926.0
+margin_bottom = 95.0
+custom_constants/separation = 15
+
+[node name="Label2" type="Label" parent="Impostazioni/Ristorante/Staff2"]
+margin_top = 1.0
+margin_right = 455.0
+margin_bottom = 29.0
+size_flags_horizontal = 3
+theme = ExtResource( 3 )
+text = "Nome"
+align = 1
+
+[node name="Utente" type="LineEdit" parent="Impostazioni/Ristorante/Staff2"]
+margin_left = 470.0
+margin_right = 926.0
+margin_bottom = 30.0
+size_flags_horizontal = 3
+theme = ExtResource( 3 )
+text = "Suisse"
+align = 1
+editable = false
+
+[node name="Telefono" type="HBoxContainer" parent="Impostazioni/Ristorante"]
+margin_top = 105.0
+margin_right = 926.0
+margin_bottom = 135.0
+custom_constants/separation = 15
+alignment = 1
+
+[node name="Label2" type="Label" parent="Impostazioni/Ristorante/Telefono"]
+margin_top = 1.0
+margin_right = 455.0
+margin_bottom = 29.0
+size_flags_horizontal = 3
+theme = ExtResource( 3 )
+text = "Telefono"
+align = 1
+
+[node name="Utente" type="LineEdit" parent="Impostazioni/Ristorante/Telefono"]
+margin_left = 470.0
+margin_right = 926.0
+margin_bottom = 30.0
+size_flags_horizontal = 3
+theme = ExtResource( 3 )
+text = "+39 0465 443481"
+align = 1
+editable = false
+
+[node name="Via" type="HBoxContainer" parent="Impostazioni/Ristorante"]
+margin_top = 145.0
+margin_right = 926.0
+margin_bottom = 175.0
+custom_constants/separation = 15
+
+[node name="Label2" type="Label" parent="Impostazioni/Ristorante/Via"]
+margin_top = 1.0
+margin_right = 455.0
+margin_bottom = 29.0
+size_flags_horizontal = 3
+theme = ExtResource( 3 )
+text = "Via"
+align = 1
+
+[node name="Utente" type="LineEdit" parent="Impostazioni/Ristorante/Via"]
+margin_left = 470.0
+margin_right = 926.0
+margin_bottom = 30.0
+size_flags_horizontal = 3
+theme = ExtResource( 3 )
+text = "Piazza Righi, 38086 Madonna di Campiglio"
+align = 1
+editable = false
+
 [node name="Prenotazioni" type="Control" parent="."]
 editor/display_folded = true
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 219.0
-margin_top = 33.0
+margin_left = 218.0
+margin_top = 36.0
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true,
@@ -375,12 +582,13 @@ toggle_mode = true
 icon = ExtResource( 10 )
 
 [node name="AggiungiPanel" type="Control" parent="Prenotazioni"]
+editor/display_folded = true
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -69.0
 script = ExtResource( 11 )
 __meta__ = {
-"_edit_group_": true,
 "_edit_lock_": true
 }
 
@@ -740,13 +948,13 @@ placeholder_alpha = 0.3
 editor/display_folded = true
 margin_top = 265.0
 margin_right = 1036.0
-margin_bottom = 443.0
+margin_bottom = 435.0
 size_flags_vertical = 3
 custom_constants/separation = 10
 
 [node name="Label2" type="Label" parent="Prenotazioni/AggiungiPanel/Dati/Opzioni"]
 margin_right = 55.0
-margin_bottom = 178.0
+margin_bottom = 170.0
 size_flags_vertical = 1
 theme = ExtResource( 3 )
 text = "Note:"
@@ -757,7 +965,7 @@ align = 1
 ]]
 margin_left = 65.0
 margin_right = 1036.0
-margin_bottom = 178.0
+margin_bottom = 170.0
 rect_min_size = Vector2( 0, 90 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -766,35 +974,37 @@ context_menu_enabled = false
 wrap_enabled = true
 
 [node name="Bottoni" type="HBoxContainer" parent="Prenotazioni/AggiungiPanel/Dati"]
-margin_top = 473.0
+margin_top = 465.0
 margin_right = 1036.0
 margin_bottom = 501.0
 custom_constants/separation = 30
 alignment = 1
 
 [node name="Registra" type="Button" parent="Prenotazioni/AggiungiPanel/Dati/Bottoni"]
-margin_left = 322.0
+margin_left = 314.0
 margin_right = 543.0
-margin_bottom = 28.0
+margin_bottom = 36.0
 size_flags_horizontal = 4
 theme = ExtResource( 3 )
 text = "Registra Prenotazione"
 
 [node name="Svuota" type="Button" parent="Prenotazioni/AggiungiPanel/Dati/Bottoni"]
 margin_left = 573.0
-margin_right = 714.0
-margin_bottom = 28.0
+margin_right = 722.0
+margin_bottom = 36.0
 size_flags_horizontal = 4
 theme = ExtResource( 3 )
 text = "Svuota Campi"
 
 [node name="EliminaPanel" type="Control" parent="Prenotazioni"]
-editor/display_folded = true
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_bottom = -91.0
+margin_bottom = -79.0
 script = ExtResource( 12 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="BG4" type="ColorRect" parent="Prenotazioni/EliminaPanel"]
 anchor_right = 1.0
@@ -802,14 +1012,16 @@ anchor_bottom = 1.0
 color = Color( 0.235294, 0.235294, 0.270588, 1 )
 
 [node name="Container" type="VBoxContainer" parent="Prenotazioni/EliminaPanel"]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 33.0
 margin_right = -32.0
+margin_bottom = -20.0
 alignment = 1
 
 [node name="Text" type="Label" parent="Prenotazioni/EliminaPanel/Container"]
-margin_right = 1116.0
+margin_right = 1117.0
 margin_bottom = 55.0
 theme = ExtResource( 3 )
 custom_fonts/font = SubResource( 4 )
@@ -819,7 +1031,7 @@ align = 1
 
 [node name="Labels" type="HBoxContainer" parent="Prenotazioni/EliminaPanel/Container"]
 margin_top = 59.0
-margin_right = 1116.0
+margin_right = 1117.0
 margin_bottom = 87.0
 size_flags_horizontal = 3
 alignment = 1
@@ -889,7 +1101,7 @@ align = 1
 
 [node name="Text2" type="Label" parent="Prenotazioni/EliminaPanel/Container/Labels"]
 margin_left = 930.0
-margin_right = 1116.0
+margin_right = 1117.0
 margin_bottom = 28.0
 size_flags_horizontal = 3
 theme = ExtResource( 3 )
@@ -911,8 +1123,8 @@ stretch_mode = 6
 
 [node name="Elenco" type="ScrollContainer" parent="Prenotazioni/EliminaPanel/Container"]
 margin_top = 91.0
-margin_right = 1116.0
-margin_bottom = 664.0
+margin_right = 1117.0
+margin_bottom = 651.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 3 )
@@ -921,15 +1133,15 @@ scroll_horizontal_enabled = false
 [node name="Elenco" type="VBoxContainer" parent="Prenotazioni/EliminaPanel/Container/Elenco"]
 margin_left = 2.0
 margin_top = 2.0
-margin_right = 1114.0
+margin_right = 1115.0
 margin_bottom = 2.0
 size_flags_horizontal = 3
 
 [node name="Ricerca" type="HBoxContainer" parent="Prenotazioni/EliminaPanel/Container"]
 editor/display_folded = true
-margin_top = 668.0
-margin_right = 1116.0
-margin_bottom = 698.0
+margin_top = 655.0
+margin_right = 1117.0
+margin_bottom = 685.0
 size_flags_horizontal = 3
 custom_constants/separation = 20
 alignment = 1
@@ -984,7 +1196,7 @@ placeholder_alpha = 0.3
 
 [node name="data" type="LineEdit" parent="Prenotazioni/EliminaPanel/Container/Ricerca"]
 margin_left = 925.0
-margin_right = 1116.0
+margin_right = 1117.0
 margin_bottom = 30.0
 size_flags_horizontal = 3
 theme = ExtResource( 3 )
@@ -993,12 +1205,14 @@ placeholder_text = "data"
 placeholder_alpha = 0.3
 
 [node name="ModificaPanel" type="Control" parent="Prenotazioni"]
-editor/display_folded = true
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_bottom = -91.0
+margin_bottom = -79.0
 script = ExtResource( 15 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="BG5" type="ColorRect" parent="Prenotazioni/ModificaPanel"]
 anchor_right = 1.0
@@ -1011,10 +1225,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 33.0
 margin_right = -32.0
+margin_bottom = -20.0
 alignment = 1
 
 [node name="Text" type="Label" parent="Prenotazioni/ModificaPanel/Container"]
-margin_right = 1116.0
+margin_right = 1117.0
 margin_bottom = 55.0
 theme = ExtResource( 3 )
 custom_fonts/font = SubResource( 4 )
@@ -1025,7 +1240,7 @@ align = 1
 [node name="Labels" type="HBoxContainer" parent="Prenotazioni/ModificaPanel/Container"]
 editor/display_folded = true
 margin_top = 59.0
-margin_right = 1116.0
+margin_right = 1117.0
 margin_bottom = 87.0
 size_flags_horizontal = 3
 alignment = 1
@@ -1081,7 +1296,7 @@ align = 1
 
 [node name="Text3" type="Label" parent="Prenotazioni/ModificaPanel/Container/Labels"]
 margin_left = 930.0
-margin_right = 1116.0
+margin_right = 1117.0
 margin_bottom = 28.0
 size_flags_horizontal = 3
 theme = ExtResource( 3 )
@@ -1103,8 +1318,8 @@ stretch_mode = 6
 
 [node name="Elenco" type="ScrollContainer" parent="Prenotazioni/ModificaPanel/Container"]
 margin_top = 91.0
-margin_right = 1116.0
-margin_bottom = 664.0
+margin_right = 1117.0
+margin_bottom = 651.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 3 )
@@ -1113,15 +1328,15 @@ scroll_horizontal_enabled = false
 [node name="Elenco" type="VBoxContainer" parent="Prenotazioni/ModificaPanel/Container/Elenco"]
 margin_left = 2.0
 margin_top = 2.0
-margin_right = 1114.0
+margin_right = 1115.0
 margin_bottom = 2.0
 size_flags_horizontal = 3
 
 [node name="Ricerca" type="HBoxContainer" parent="Prenotazioni/ModificaPanel/Container"]
 editor/display_folded = true
-margin_top = 668.0
-margin_right = 1116.0
-margin_bottom = 698.0
+margin_top = 655.0
+margin_right = 1117.0
+margin_bottom = 685.0
 size_flags_horizontal = 3
 custom_constants/separation = 20
 alignment = 1
@@ -1176,7 +1391,7 @@ placeholder_alpha = 0.3
 
 [node name="data" type="LineEdit" parent="Prenotazioni/ModificaPanel/Container/Ricerca"]
 margin_left = 925.0
-margin_right = 1116.0
+margin_right = 1117.0
 margin_bottom = 30.0
 size_flags_horizontal = 3
 theme = ExtResource( 3 )
@@ -1528,12 +1743,14 @@ theme = ExtResource( 3 )
 text = "Annulla"
 
 [node name="ElencoPanel" type="Control" parent="Prenotazioni"]
-editor/display_folded = true
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_bottom = -91.0
+margin_bottom = -79.0
 script = ExtResource( 18 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Container" type="VBoxContainer" parent="Prenotazioni/ElencoPanel"]
 editor/display_folded = true
@@ -1541,10 +1758,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 33.0
 margin_right = -32.0
+margin_bottom = -20.0
 alignment = 1
 
 [node name="Text" type="Label" parent="Prenotazioni/ElencoPanel/Container"]
-margin_right = 1116.0
+margin_right = 1117.0
 margin_bottom = 55.0
 theme = ExtResource( 3 )
 custom_fonts/font = SubResource( 4 )
@@ -1555,7 +1773,7 @@ align = 1
 [node name="Labels" type="HBoxContainer" parent="Prenotazioni/ElencoPanel/Container"]
 editor/display_folded = true
 margin_top = 59.0
-margin_right = 1116.0
+margin_right = 1117.0
 margin_bottom = 87.0
 size_flags_horizontal = 3
 alignment = 1
@@ -1601,7 +1819,7 @@ align = 1
 
 [node name="Label7" type="Label" parent="Prenotazioni/ElencoPanel/Container/Labels"]
 margin_left = 896.0
-margin_right = 1116.0
+margin_right = 1117.0
 margin_bottom = 28.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -1611,8 +1829,8 @@ align = 1
 
 [node name="Elenco" type="ScrollContainer" parent="Prenotazioni/ElencoPanel/Container"]
 margin_top = 91.0
-margin_right = 1116.0
-margin_bottom = 642.0
+margin_right = 1117.0
+margin_bottom = 631.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 3 )
@@ -1621,14 +1839,14 @@ scroll_horizontal_enabled = false
 [node name="Elenco" type="VBoxContainer" parent="Prenotazioni/ElencoPanel/Container/Elenco"]
 margin_left = 2.0
 margin_top = 2.0
-margin_right = 1114.0
+margin_right = 1115.0
 margin_bottom = 2.0
 size_flags_horizontal = 3
 
 [node name="Ricerca" type="HBoxContainer" parent="Prenotazioni/ElencoPanel/Container"]
-margin_top = 646.0
-margin_right = 1116.0
-margin_bottom = 676.0
+margin_top = 635.0
+margin_right = 1117.0
+margin_bottom = 665.0
 size_flags_horizontal = 3
 custom_constants/separation = 20
 alignment = 1
@@ -1683,7 +1901,7 @@ placeholder_alpha = 0.3
 
 [node name="data" type="LineEdit" parent="Prenotazioni/ElencoPanel/Container/Ricerca"]
 margin_left = 925.0
-margin_right = 1116.0
+margin_right = 1117.0
 margin_bottom = 30.0
 size_flags_horizontal = 3
 theme = ExtResource( 3 )
@@ -1696,10 +1914,11 @@ editor/display_folded = true
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 215.0
-margin_top = 33.0
+margin_left = 218.0
+margin_top = 36.0
 script = ExtResource( 19 )
 __meta__ = {
+"_edit_group_": true,
 "_edit_lock_": true
 }
 
@@ -1709,6 +1928,7 @@ anchor_bottom = 1.0
 color = Color( 0.235294, 0.235294, 0.270588, 1 )
 
 [node name="BottomMenu" type="HBoxContainer" parent="Clienti"]
+editor/display_folded = true
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1718,8 +1938,8 @@ custom_constants/separation = 0
 alignment = 1
 
 [node name="Aggiungi" type="Button" parent="Clienti/BottomMenu"]
-margin_left = 501.0
-margin_right = 561.0
+margin_left = 499.0
+margin_right = 559.0
 margin_bottom = 69.0
 hint_tooltip = "Registra un cliente"
 theme = ExtResource( 3 )
@@ -1730,8 +1950,8 @@ toggle_mode = true
 icon = ExtResource( 20 )
 
 [node name="Gestisci" type="Button" parent="Clienti/BottomMenu"]
-margin_left = 561.0
-margin_right = 621.0
+margin_left = 559.0
+margin_right = 619.0
 margin_bottom = 69.0
 hint_tooltip = "Elimina un cliente"
 theme = ExtResource( 3 )
@@ -1742,8 +1962,8 @@ toggle_mode = true
 icon = ExtResource( 21 )
 
 [node name="Elenco" type="Button" parent="Clienti/BottomMenu"]
-margin_left = 621.0
-margin_right = 681.0
+margin_left = 619.0
+margin_right = 679.0
 margin_bottom = 69.0
 hint_tooltip = "Mostra elenco clienti"
 theme = ExtResource( 3 )
@@ -1754,13 +1974,12 @@ toggle_mode = true
 icon = ExtResource( 10 )
 
 [node name="AggiungiPanel" type="Control" parent="Clienti"]
-visible = false
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_bottom = -69.0
+margin_bottom = -79.0
 script = ExtResource( 22 )
 __meta__ = {
-"_edit_group_": true,
 "_edit_lock_": true
 }
 
@@ -2152,33 +2371,34 @@ wrap_enabled = true
 [node name="Bottoni" type="HBoxContainer" parent="Clienti/AggiungiPanel/Dati"]
 margin_top = 475.0
 margin_right = 1069.0
-margin_bottom = 503.0
+margin_bottom = 511.0
 custom_constants/separation = 30
 alignment = 1
 
 [node name="Registra" type="Button" parent="Clienti/AggiungiPanel/Dati/Bottoni"]
-margin_left = 370.0
+margin_left = 362.0
 margin_right = 528.0
-margin_bottom = 28.0
+margin_bottom = 36.0
 size_flags_horizontal = 4
 theme = ExtResource( 3 )
 text = "Registra Cliente"
 
 [node name="Svuota" type="Button" parent="Clienti/AggiungiPanel/Dati/Bottoni"]
 margin_left = 558.0
-margin_right = 699.0
-margin_bottom = 28.0
+margin_right = 707.0
+margin_bottom = 36.0
 size_flags_horizontal = 4
 theme = ExtResource( 3 )
 text = "Svuota Campi"
 
 [node name="GestisciPanel" type="Control" parent="Clienti"]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_bottom = -69.0
+margin_bottom = -79.0
 script = ExtResource( 23 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="BG7" type="ColorRect" parent="Clienti/GestisciPanel"]
 anchor_right = 1.0
@@ -2190,16 +2410,15 @@ editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 33.0
-margin_top = 2.0
 margin_right = -32.0
-margin_bottom = -18.0
+margin_bottom = -20.0
 alignment = 1
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Text" type="Label" parent="Clienti/GestisciPanel/Container"]
-margin_right = 1116.0
+margin_right = 1117.0
 margin_bottom = 55.0
 theme = ExtResource( 3 )
 custom_fonts/font = SubResource( 4 )
@@ -2210,7 +2429,7 @@ align = 1
 [node name="Labels" type="HBoxContainer" parent="Clienti/GestisciPanel/Container"]
 editor/display_folded = true
 margin_top = 59.0
-margin_right = 1116.0
+margin_right = 1117.0
 margin_bottom = 87.0
 size_flags_horizontal = 3
 alignment = 1
@@ -2295,8 +2514,8 @@ valign = 1
 [node name="Elenco" type="ScrollContainer" parent="Clienti/GestisciPanel/Container"]
 editor/display_folded = true
 margin_top = 91.0
-margin_right = 1116.0
-margin_bottom = 644.0
+margin_right = 1117.0
+margin_bottom = 631.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 3 )
@@ -2305,15 +2524,15 @@ scroll_horizontal_enabled = false
 [node name="Elenco" type="VBoxContainer" parent="Clienti/GestisciPanel/Container/Elenco"]
 margin_left = 2.0
 margin_top = 2.0
-margin_right = 1114.0
+margin_right = 1115.0
 margin_bottom = 2.0
 size_flags_horizontal = 3
 
 [node name="Ricerca" type="HBoxContainer" parent="Clienti/GestisciPanel/Container"]
 editor/display_folded = true
-margin_top = 648.0
-margin_right = 1116.0
-margin_bottom = 678.0
+margin_top = 635.0
+margin_right = 1117.0
+margin_bottom = 665.0
 size_flags_horizontal = 3
 custom_constants/separation = 20
 
@@ -2327,7 +2546,7 @@ align = 1
 
 [node name="nome" type="LineEdit" parent="Clienti/GestisciPanel/Container/Ricerca"]
 margin_left = 85.0
-margin_right = 327.0
+margin_right = 328.0
 margin_bottom = 30.0
 size_flags_horizontal = 3
 theme = ExtResource( 3 )
@@ -2336,8 +2555,8 @@ placeholder_text = "nome"
 placeholder_alpha = 0.3
 
 [node name="cognome" type="LineEdit" parent="Clienti/GestisciPanel/Container/Ricerca"]
-margin_left = 347.0
-margin_right = 589.0
+margin_left = 348.0
+margin_right = 591.0
 margin_bottom = 30.0
 size_flags_horizontal = 3
 theme = ExtResource( 3 )
@@ -2346,8 +2565,8 @@ placeholder_text = "cognome"
 placeholder_alpha = 0.3
 
 [node name="telefono" type="LineEdit" parent="Clienti/GestisciPanel/Container/Ricerca"]
-margin_left = 609.0
-margin_right = 851.0
+margin_left = 611.0
+margin_right = 854.0
 margin_bottom = 30.0
 size_flags_horizontal = 3
 theme = ExtResource( 3 )
@@ -2356,8 +2575,8 @@ placeholder_text = "telefono"
 placeholder_alpha = 0.3
 
 [node name="mail" type="LineEdit" parent="Clienti/GestisciPanel/Container/Ricerca"]
-margin_left = 871.0
-margin_right = 1116.0
+margin_left = 874.0
+margin_right = 1117.0
 margin_bottom = 30.0
 size_flags_horizontal = 3
 theme = ExtResource( 3 )
@@ -2377,6 +2596,7 @@ placeholder_text = "data"
 placeholder_alpha = 0.3
 
 [node name="ModificaCliente" type="Control" parent="Clienti/GestisciPanel"]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -4.0
@@ -2773,34 +2993,35 @@ wrap_enabled = true
 [node name="Bottoni" type="HBoxContainer" parent="Clienti/GestisciPanel/ModificaCliente/Dati"]
 margin_top = 475.0
 margin_right = 1069.0
-margin_bottom = 503.0
+margin_bottom = 511.0
 custom_constants/separation = 30
 alignment = 1
 
 [node name="Registra" type="Button" parent="Clienti/GestisciPanel/ModificaCliente/Dati/Bottoni"]
-margin_left = 401.0
+margin_left = 393.0
 margin_right = 565.0
-margin_bottom = 28.0
+margin_bottom = 36.0
 size_flags_horizontal = 4
 theme = ExtResource( 3 )
 text = "Modifica Cliente"
 
 [node name="Svuota" type="Button" parent="Clienti/GestisciPanel/ModificaCliente/Dati/Bottoni"]
 margin_left = 595.0
-margin_right = 667.0
-margin_bottom = 28.0
+margin_right = 675.0
+margin_bottom = 36.0
 size_flags_horizontal = 4
 theme = ExtResource( 3 )
 text = "Annulla"
 
 [node name="ElencoPanel" type="Control" parent="Clienti"]
-editor/display_folded = true
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_bottom = -69.0
+margin_bottom = -79.0
 script = ExtResource( 25 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="BG7" type="ColorRect" parent="Clienti/ElencoPanel"]
 anchor_right = 1.0
@@ -2808,19 +3029,16 @@ anchor_bottom = 1.0
 color = Color( 0.235294, 0.235294, 0.270588, 1 )
 
 [node name="Container" type="VBoxContainer" parent="Clienti/ElencoPanel"]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 33.0
-margin_top = 2.0
 margin_right = -32.0
-margin_bottom = -18.0
+margin_bottom = -20.0
 alignment = 1
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Text" type="Label" parent="Clienti/ElencoPanel/Container"]
-margin_right = 1116.0
+margin_right = 1117.0
 margin_bottom = 55.0
 theme = ExtResource( 3 )
 custom_fonts/font = SubResource( 4 )
@@ -2831,7 +3049,7 @@ align = 1
 [node name="Labels" type="HBoxContainer" parent="Clienti/ElencoPanel/Container"]
 editor/display_folded = true
 margin_top = 59.0
-margin_right = 1116.0
+margin_right = 1117.0
 margin_bottom = 87.0
 size_flags_horizontal = 3
 alignment = 1
@@ -2877,7 +3095,7 @@ align = 1
 
 [node name="Label7" type="Label" parent="Clienti/ElencoPanel/Container/Labels"]
 margin_left = 896.0
-margin_right = 1116.0
+margin_right = 1117.0
 margin_bottom = 28.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -2888,8 +3106,8 @@ align = 1
 [node name="Elenco" type="ScrollContainer" parent="Clienti/ElencoPanel/Container"]
 editor/display_folded = true
 margin_top = 91.0
-margin_right = 1116.0
-margin_bottom = 644.0
+margin_right = 1117.0
+margin_bottom = 631.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 3 )
@@ -2898,15 +3116,15 @@ scroll_horizontal_enabled = false
 [node name="Elenco" type="VBoxContainer" parent="Clienti/ElencoPanel/Container/Elenco"]
 margin_left = 2.0
 margin_top = 2.0
-margin_right = 1114.0
+margin_right = 1115.0
 margin_bottom = 2.0
 size_flags_horizontal = 3
 
 [node name="Ricerca" type="HBoxContainer" parent="Clienti/ElencoPanel/Container"]
 editor/display_folded = true
-margin_top = 648.0
-margin_right = 1116.0
-margin_bottom = 678.0
+margin_top = 635.0
+margin_right = 1117.0
+margin_bottom = 665.0
 size_flags_horizontal = 3
 custom_constants/separation = 20
 
@@ -2920,7 +3138,7 @@ align = 1
 
 [node name="nome" type="LineEdit" parent="Clienti/ElencoPanel/Container/Ricerca"]
 margin_left = 85.0
-margin_right = 327.0
+margin_right = 328.0
 margin_bottom = 30.0
 size_flags_horizontal = 3
 theme = ExtResource( 3 )
@@ -2929,8 +3147,8 @@ placeholder_text = "nome"
 placeholder_alpha = 0.3
 
 [node name="cognome" type="LineEdit" parent="Clienti/ElencoPanel/Container/Ricerca"]
-margin_left = 347.0
-margin_right = 589.0
+margin_left = 348.0
+margin_right = 591.0
 margin_bottom = 30.0
 size_flags_horizontal = 3
 theme = ExtResource( 3 )
@@ -2939,8 +3157,8 @@ placeholder_text = "cognome"
 placeholder_alpha = 0.3
 
 [node name="telefono" type="LineEdit" parent="Clienti/ElencoPanel/Container/Ricerca"]
-margin_left = 609.0
-margin_right = 851.0
+margin_left = 611.0
+margin_right = 854.0
 margin_bottom = 30.0
 size_flags_horizontal = 3
 theme = ExtResource( 3 )
@@ -2949,8 +3167,8 @@ placeholder_text = "telefono"
 placeholder_alpha = 0.3
 
 [node name="mail" type="LineEdit" parent="Clienti/ElencoPanel/Container/Ricerca"]
-margin_left = 871.0
-margin_right = 1116.0
+margin_left = 874.0
+margin_right = 1117.0
 margin_bottom = 30.0
 size_flags_horizontal = 3
 theme = ExtResource( 3 )
@@ -2977,10 +3195,6 @@ anchor_bottom = 1.0
 margin_left = 215.0
 margin_top = 33.0
 script = ExtResource( 6 )
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
 
 [node name="BG2" type="ColorRect" parent="Tavoli"]
 anchor_right = 1.0
@@ -3001,8 +3215,8 @@ __meta__ = {
 }
 
 [node name="Aggiungi" type="Button" parent="Tavoli/BottomMenu"]
-margin_left = 284.0
-margin_right = 344.0
+margin_left = 472.0
+margin_right = 532.0
 margin_bottom = 69.0
 hint_tooltip = "Registra una prenotazione"
 theme = ExtResource( 3 )
@@ -3013,8 +3227,8 @@ toggle_mode = true
 icon = ExtResource( 7 )
 
 [node name="Elimina" type="Button" parent="Tavoli/BottomMenu"]
-margin_left = 344.0
-margin_right = 404.0
+margin_left = 532.0
+margin_right = 592.0
 margin_bottom = 69.0
 hint_tooltip = "Elimina una prenotazione"
 theme = ExtResource( 3 )
@@ -3025,8 +3239,8 @@ toggle_mode = true
 icon = ExtResource( 8 )
 
 [node name="Modifica" type="Button" parent="Tavoli/BottomMenu"]
-margin_left = 404.0
-margin_right = 464.0
+margin_left = 592.0
+margin_right = 652.0
 margin_bottom = 69.0
 hint_tooltip = "Modifica una prenotazione"
 theme = ExtResource( 3 )
@@ -3037,8 +3251,8 @@ toggle_mode = true
 icon = ExtResource( 9 )
 
 [node name="Elenco" type="Button" parent="Tavoli/BottomMenu"]
-margin_left = 464.0
-margin_right = 524.0
+margin_left = 652.0
+margin_right = 712.0
 margin_bottom = 69.0
 hint_tooltip = "Mostra elenco prenotazioni"
 theme = ExtResource( 3 )
@@ -3365,23 +3579,23 @@ wrap_enabled = true
 [node name="Bottoni" type="HBoxContainer" parent="Tavoli/AggiungiPanel/Dati"]
 margin_top = 385.0
 margin_right = 746.0
-margin_bottom = 413.0
+margin_bottom = 421.0
 size_flags_vertical = 3
 custom_constants/separation = 30
 alignment = 1
 
 [node name="Registra" type="Button" parent="Tavoli/AggiungiPanel/Dati/Bottoni"]
-margin_left = 177.0
+margin_left = 169.0
 margin_right = 398.0
-margin_bottom = 28.0
+margin_bottom = 36.0
 size_flags_horizontal = 4
 theme = ExtResource( 3 )
 text = "Registra Prenotazione"
 
 [node name="Svuota" type="Button" parent="Tavoli/AggiungiPanel/Dati/Bottoni"]
 margin_left = 428.0
-margin_right = 569.0
-margin_bottom = 28.0
+margin_right = 577.0
+margin_bottom = 36.0
 size_flags_horizontal = 4
 theme = ExtResource( 3 )
 text = "Svuota Campi"
@@ -4892,19 +5106,29 @@ __meta__ = {
 [node name="ButtonsBG" type="ColorRect" parent="SideMenu"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 17.0
+margin_right = 13.0
 color = Color( 0.670588, 0.278431, 0.278431, 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="Bottoni" type="VBoxContainer" parent="SideMenu"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 13.0
-margin_bottom = -308.0
-custom_constants/separation = 8
+margin_right = 218.0
+margin_bottom = 480.0
+custom_constants/separation = 0
+
+[node name="Label" type="Label" parent="SideMenu/Bottoni"]
+margin_right = 218.0
+margin_bottom = 28.0
+theme = ExtResource( 3 )
+text = "Menu"
+align = 1
 
 [node name="Prenotazioni" type="Button" parent="SideMenu/Bottoni"]
+margin_top = 28.0
 margin_right = 218.0
-margin_bottom = 76.0
+margin_bottom = 96.0
 theme = ExtResource( 3 )
 custom_constants/hseparation = 5
 toggle_mode = true
@@ -4913,9 +5137,9 @@ icon = ExtResource( 27 )
 align = 0
 
 [node name="Tavoli" type="Button" parent="SideMenu/Bottoni"]
-margin_top = 84.0
+margin_top = 96.0
 margin_right = 218.0
-margin_bottom = 160.0
+margin_bottom = 164.0
 theme = ExtResource( 3 )
 custom_constants/hseparation = 5
 toggle_mode = true
@@ -4924,45 +5148,42 @@ icon = ExtResource( 28 )
 align = 0
 
 [node name="Clienti" type="Button" parent="SideMenu/Bottoni"]
-margin_top = 168.0
+margin_top = 164.0
 margin_right = 218.0
-margin_bottom = 244.0
+margin_bottom = 232.0
 theme = ExtResource( 3 )
 custom_constants/hseparation = 5
-disabled = true
 toggle_mode = true
 text = "Clienti"
 icon = ExtResource( 29 )
 align = 0
 
 [node name="Materiali" type="Button" parent="SideMenu/Bottoni"]
-margin_top = 252.0
+margin_top = 232.0
 margin_right = 218.0
-margin_bottom = 328.0
+margin_bottom = 300.0
 theme = ExtResource( 3 )
 custom_constants/hseparation = 5
-disabled = true
 toggle_mode = true
 text = "Materiali"
 icon = ExtResource( 30 )
 align = 0
 
 [node name="Stats" type="Button" parent="SideMenu/Bottoni"]
-margin_top = 336.0
+margin_top = 300.0
 margin_right = 218.0
-margin_bottom = 412.0
+margin_bottom = 368.0
 theme = ExtResource( 3 )
 custom_constants/hseparation = 5
-disabled = true
 toggle_mode = true
 text = "Statistiche"
 icon = ExtResource( 31 )
 align = 0
 
 [node name="Staff" type="Button" parent="SideMenu/Bottoni"]
-margin_top = 420.0
+margin_top = 368.0
 margin_right = 218.0
-margin_bottom = 496.0
+margin_bottom = 436.0
 theme = ExtResource( 3 )
 custom_constants/hseparation = 5
 toggle_mode = true
@@ -4971,9 +5192,9 @@ icon = ExtResource( 32 )
 align = 0
 
 [node name="Pannello" type="Button" parent="SideMenu/Bottoni"]
-margin_top = 504.0
+margin_top = 436.0
 margin_right = 218.0
-margin_bottom = 580.0
+margin_bottom = 504.0
 theme = ExtResource( 3 )
 custom_constants/hseparation = 5
 toggle_mode = true
@@ -4981,49 +5202,70 @@ text = "Pannello"
 icon = ExtResource( 33 )
 align = 0
 
+[node name="Impostazioni" type="Button" parent="SideMenu/Bottoni"]
+margin_top = 504.0
+margin_right = 218.0
+margin_bottom = 572.0
+theme = ExtResource( 3 )
+custom_constants/hseparation = 5
+toggle_mode = true
+text = "Impostazioni"
+icon = ExtResource( 34 )
+align = 0
+
 [node name="Accesso" type="Control" parent="."]
-editor/display_folded = true
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 34 )
+script = ExtResource( 35 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="BG" type="ColorRect" parent="Accesso"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0.235294, 0.235294, 0.270588, 1 )
 
-[node name="TextureRect" type="TextureRect" parent="Accesso"]
-modulate = Color( 0.670588, 0.278431, 0.278431, 1 )
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -53.5
-margin_top = -103.213
-margin_right = 53.5
-margin_bottom = 16.7867
-size_flags_horizontal = 7
-size_flags_vertical = 3
-texture = ExtResource( 35 )
-
 [node name="VBoxContainer" type="VBoxContainer" parent="Accesso"]
+editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -138.0
-margin_top = 30.0
+margin_top = -150.428
 margin_right = 139.0
-margin_bottom = 168.0
+margin_bottom = 220.572
 size_flags_horizontal = 5
 size_flags_vertical = 5
 custom_constants/separation = 25
 alignment = 1
 
-[node name="User" type="LineEdit" parent="Accesso/VBoxContainer"]
+[node name="Accesso" type="Label" parent="Accesso/VBoxContainer"]
 margin_right = 277.0
-margin_bottom = 30.0
+margin_bottom = 55.0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.670588, 0.278431, 0.278431, 1 )
+text = "Accesso"
+align = 1
+
+[node name="TextureRect" type="TextureRect" parent="Accesso/VBoxContainer"]
+modulate = Color( 0.670588, 0.278431, 0.278431, 1 )
+margin_left = 85.0
+margin_top = 80.0
+margin_right = 192.0
+margin_bottom = 200.0
+size_flags_horizontal = 4
+size_flags_vertical = 3
+texture = ExtResource( 36 )
+
+[node name="User" type="LineEdit" parent="Accesso/VBoxContainer"]
+margin_top = 225.0
+margin_right = 277.0
+margin_bottom = 255.0
 grow_horizontal = 2
 focus_next = NodePath("../Password")
 focus_mode = 1
@@ -5035,9 +5277,9 @@ placeholder_text = "Utente"
 caret_blink = true
 
 [node name="Password" type="LineEdit" parent="Accesso/VBoxContainer"]
-margin_top = 55.0
+margin_top = 280.0
 margin_right = 277.0
-margin_bottom = 85.0
+margin_bottom = 310.0
 grow_horizontal = 2
 focus_next = NodePath("../Button")
 focus_mode = 1
@@ -5049,32 +5291,45 @@ placeholder_text = "Password"
 caret_blink = true
 
 [node name="Button" type="Button" parent="Accesso/VBoxContainer"]
-margin_top = 110.0
+margin_top = 335.0
 margin_right = 277.0
-margin_bottom = 138.0
+margin_bottom = 371.0
 theme = ExtResource( 3 )
 text = "Accedi"
 
-[node name="Accesso" type="Label" parent="Accesso"]
+[node name="logo" type="TextureRect" parent="Accesso"]
+editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -76.0
-margin_top = -165.395
-margin_right = 76.0
-margin_bottom = -110.395
-theme = ExtResource( 3 )
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0.670588, 0.278431, 0.278431, 1 )
-text = "Accesso"
-align = 1
+margin_left = -547.0
+margin_top = -295.003
+margin_right = 547.0
+margin_bottom = -189.003
+size_flags_horizontal = 7
+size_flags_vertical = 3
+texture = ExtResource( 37 )
+
+[node name="BG2" type="ColorRect" parent="Accesso/logo"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.235294, 0.235294, 0.270588, 1 )
+
+[node name="PrimaInstallazione" parent="." instance=ExtResource( 38 )]
+visible = false
 
 [node name="TopBar" type="Control" parent="."]
+editor/display_folded = true
 anchor_right = 1.0
 margin_bottom = 35.0
 mouse_default_cursor_shape = 13
-script = ExtResource( 36 )
+script = ExtResource( 39 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="BG4" type="ColorRect" parent="TopBar"]
 anchor_right = 1.0
@@ -5095,7 +5350,7 @@ margin_right = 75.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
 theme = ExtResource( 3 )
-custom_styles/normal = SubResource( 14 )
+custom_styles/normal = SubResource( 11 )
 text = "-"
 
 [node name="Exit" type="Button" parent="TopBar/Buttons"]
@@ -5104,10 +5359,11 @@ margin_right = 155.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
 theme = ExtResource( 3 )
-custom_styles/normal = SubResource( 15 )
+custom_styles/normal = SubResource( 12 )
 text = "x"
 
 [node name="Programma" type="HBoxContainer" parent="TopBar"]
+editor/display_folded = true
 margin_right = 1251.0
 margin_bottom = 35.0
 size_flags_horizontal = 3
@@ -5135,23 +5391,8 @@ valign = 1
 [node name="HBoxContainer" type="HBoxContainer" parent="TopBar"]
 margin_right = 40.0
 margin_bottom = 40.0
-
-[node name="Palette" type="TextureRect" parent="."]
-visible = false
-margin_left = 67.3058
-margin_top = 502.289
-margin_right = 967.306
-margin_bottom = 547.289
-texture = ExtResource( 37 )
-expand = true
-
-[node name="Label" type="Label" parent="."]
-visible = false
-margin_left = 455.344
-margin_top = 142.405
-margin_right = 495.344
-margin_bottom = 156.405
 [connection signal="pressed" from="Pannello/BottomMenu/CambiaUtente" to="Pannello" method="_on_CambiaUtente_pressed"]
+[connection signal="pressed" from="Impostazioni/BottomMenu/CambiaUtente" to="Impostazioni" method="_on_CambiaUtente_pressed"]
 [connection signal="toggled" from="Prenotazioni/BottomMenu/Aggiungi" to="Prenotazioni" method="_on_Aggiungi_toggled"]
 [connection signal="toggled" from="Prenotazioni/BottomMenu/Elimina" to="Prenotazioni" method="_on_Elimina_toggled"]
 [connection signal="toggled" from="Prenotazioni/BottomMenu/Modifica" to="Prenotazioni" method="_on_Modifica_toggled"]
@@ -5191,8 +5432,10 @@ margin_bottom = 156.405
 [connection signal="toggled" from="SideMenu/Bottoni/Tavoli" to="SideMenu" method="_on_Tavoli_toggled"]
 [connection signal="toggled" from="SideMenu/Bottoni/Clienti" to="SideMenu" method="_on_Clienti_toggled"]
 [connection signal="toggled" from="SideMenu/Bottoni/Materiali" to="SideMenu" method="_on_Materiali_toggled"]
+[connection signal="toggled" from="SideMenu/Bottoni/Stats" to="SideMenu" method="_on_Stats_toggled"]
 [connection signal="toggled" from="SideMenu/Bottoni/Staff" to="SideMenu" method="_on_Staff_toggled"]
 [connection signal="toggled" from="SideMenu/Bottoni/Pannello" to="SideMenu" method="_on_Pannello_toggled"]
+[connection signal="toggled" from="SideMenu/Bottoni/Impostazioni" to="SideMenu" method="_on_Impostazioni_toggled"]
 [connection signal="gui_input" from="Accesso/VBoxContainer/Password" to="Accesso" method="_on_Password_gui_input"]
 [connection signal="pressed" from="Accesso/VBoxContainer/Button" to="Accesso" method="_on_Button_pressed"]
 [connection signal="gui_input" from="TopBar" to="." method="_on_TopBar_gui_input"]
