@@ -10,16 +10,6 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Button",
-"class": "Cliente",
-"language": "GDScript",
-"path": "res://scripts/Cliente.gd"
-}, {
-"base": "HBoxContainer",
-"class": "ClienteElimina",
-"language": "GDScript",
-"path": "res://scripts/ClienteElimina.gd"
-}, {
-"base": "Button",
 "class": "Prenotazione",
 "language": "GDScript",
 "path": "res://scripts/Prenotazione.gd"
@@ -35,8 +25,6 @@ _global_script_classes=[ {
 "path": "res://scripts/PrenotazioneModifica.gd"
 } ]
 _global_script_class_icons={
-"Cliente": "",
-"ClienteElimina": "",
 "Prenotazione": "",
 "PrenotazioneElimina": "",
 "PrenotazioneModifica": ""
@@ -53,7 +41,6 @@ config/icon="res://resources/imgs/tavoli.png"
 DatiProgramma="*res://scripts/DatiProgramma.gd"
 User="*res://scripts/User.gd"
 ElencoUtenti="*res://scripts/ElencoUtenti.gd"
-ElencoClienti="*res://scripts/ElencoClienti.gd"
 ElencoPrenotazioni="*res://scripts/ElencoPrenotazioni.gd"
 
 [debug]
