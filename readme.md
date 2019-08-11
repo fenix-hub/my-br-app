@@ -1,5 +1,5 @@
 # My Booking Restaurant (FREE)
-![sh](https://github.com/fenix-hub/my-br-app/source-code/blob/screenshot/showcase.png)
+![sh](/blob/source-code/screenshot/showcase.png)
 
 ## Descrizione
 
