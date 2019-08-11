@@ -1,4 +1,4 @@
 .import/
-SCREENSHOTS/*.import
+*.import
 .git
 export_presets.cfg
