@@ -1,6 +1,7 @@
 .import/
-*.import
-*.png.import
+screenshot/*.import
+screenshot/*.png.import
 *.svg.import
 .git
 export_presets.cfg
+export.cfg
